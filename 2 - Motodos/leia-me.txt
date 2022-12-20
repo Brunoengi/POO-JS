@@ -1,0 +1,1 @@
+É possível adicionar tanto propriedades com o constructor mas também métodos

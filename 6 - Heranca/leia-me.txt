@@ -1,0 +1,3 @@
+A palavra extends é reservada para que uma classe herde os métodos e propriedades de outra classe
+
+A função super adentra no contrutor da classe pai (base)

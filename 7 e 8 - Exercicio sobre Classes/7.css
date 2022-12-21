@@ -1,0 +1,12 @@
+form > input{
+    display: block;
+}
+
+form{
+    margin-top: 10px;
+}
+
+#resultados{
+    border:1px solid;
+    margin-top: 10px;
+}

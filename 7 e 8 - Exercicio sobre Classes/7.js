@@ -29,8 +29,14 @@ class Militar extends Carro{
 }
 
 const radio = [...document.getElementsByName('r_car')]
+const nome = document.getElementById('nome')
+const cor = document.getElementById('cor')
 const blindagem = document.getElementById('blindagem')
 const municao = document.getElementById('municao')
+const btn = document.getElementById('btn')
+const Resultados = document.getElementById('resultados')
+let todosCarros = []
+let tipo
 
 
 radio.forEach((element)=>{
@@ -44,3 +50,35 @@ radio.forEach((element)=>{
         }
 })
 })
+
+btn.addEventListener('click',()=>{
+        if(radio[0].checked){
+            todosCarros.push(new Carro(nome, cor))
+            tipo = 'comum'
+            inserirDados(tipo)
+        }else{
+            todosCarros.push(new Militar(nome, cor, blindagem, municao))
+            tipo = 'militar'
+            inserirDados(tipo)
+        }
+})
+
+function inserirDados(tipo){
+    const createDiv = document.createElement('div')
+    Resultados.appendChild(createDiv)
+    if(tipo =='comum'){
+        createDiv.innerHTML = `Nome: ${nome.value}<br> Cor: ${cor.value}`
+    }else if(tipo =='militar'){
+        createDiv.innerHTML = `Nome: ${nome.value} <br> Cor: ${cor.value} <br> Blindagem: ${blindagem.value} <br> Munição: ${municao.value}`
+    }else{
+        console.log('Erro ao definir o tipo de carro')
+    }
+    zerarCampos(nome, cor, blindagem, municao)
+}
+
+function zerarCampos(nome,cor,blindagem,municao){
+    nome.innerText = ''
+    cor.innerText = ''
+    blindagem.innerText = ''
+    municao.innerText = ''
+}

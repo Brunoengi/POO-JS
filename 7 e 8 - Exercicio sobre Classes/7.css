@@ -10,3 +10,6 @@ form{
     border:1px solid;
     margin-top: 10px;
 }
+input[type='button']{
+    margin-top: 10px;
+}

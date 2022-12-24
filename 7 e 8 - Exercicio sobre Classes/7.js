@@ -37,6 +37,7 @@ const btn = document.getElementById('btn')
 const Resultados = document.getElementById('resultados')
 let todosCarros = []
 let tipo
+let posicao = 0
 
 
 radio.forEach((element)=>{
@@ -64,8 +65,22 @@ btn.addEventListener('click',()=>{
 })
 
 function inserirDados(tipo){
+
     const createDiv = document.createElement('div')
-    Resultados.appendChild(createDiv)
+    const createCtnDiv = document.createElement('div')
+    const createDeleteButton = document.createElement("input")
+    createDeleteButton.setAttribute('posicao',posicao)
+    posicao++
+
+    createDeleteButton.setAttribute('type','button')
+    createDeleteButton.addEventListener('click', deletar)
+
+    Resultados.appendChild(createCtnDiv)
+    createCtnDiv.appendChild(createDiv)
+    createCtnDiv.appendChild(createDeleteButton)
+
+    createDeleteButton.value = 'Deletar'
+
     if(tipo =='comum'){
         createDiv.innerHTML = `Nome: ${nome.value}<br> Cor: ${cor.value}`
     }else if(tipo =='militar'){
@@ -73,12 +88,22 @@ function inserirDados(tipo){
     }else{
         console.log('Erro ao definir o tipo de carro')
     }
+
     zerarCampos(nome, cor, blindagem, municao)
+
+
 }
 
 function zerarCampos(nome,cor,blindagem,municao){
-    nome.innerText = ''
-    cor.innerText = ''
-    blindagem.innerText = ''
-    municao.innerText = ''
+    nome.value = ''
+    cor.value = ''
+    blindagem.value = 0
+    municao.value = 0
+}
+
+function deletar(event){
+    
+    let emissor = event.target
+    emissor.parentNode.parentNode.removeChild(emissor.parentNode)
+    
 }

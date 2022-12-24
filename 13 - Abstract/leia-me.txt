@@ -1,0 +1,3 @@
+O conceito de abstract não está implementado em JS, mas pode ser simulado.
+Classes abstratar não podem ser instanciadas, elas só servem de base para outras classes, só podendo ser extendidas (conceito de herança)
+

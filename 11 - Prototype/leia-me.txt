@@ -1,0 +1,1 @@
+Serve para quando eu quiser adicionar uma propriedade ou método a um objeto depois da criação da classe

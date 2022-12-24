@@ -1,0 +1,7 @@
+Existem dois métodos para isso que são parse e stringfy
+
+O stringfy converte um objeto literal em uma string json
+
+JSON.stringfy(objeto)
+
+Já o método parse converte uma string json em objeto json

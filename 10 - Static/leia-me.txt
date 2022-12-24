@@ -1,0 +1,1 @@
+Pode-se definir tanto propriedades quanto métodos com a palavra static, conseguindo ser invocado sem que tenha ocorrido a instância da classe, como se os membros static pertencessem a classe e não aos objetos. Assim, todas as instâncias da classe conseguiram ler o mesmo valor
